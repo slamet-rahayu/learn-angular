@@ -1,0 +1,31 @@
+<div class="container mx-auto flex justify-center items-center form-container">
+  <div class="border-2 border-grey-500 p-16 rounded-lg">
+    <form (ngSubmit)="submitLogin()" class="w-96">
+      <h1 class="mb-4">Login</h1>
+      <div class="form-control mb-2">
+        <input
+          class="p-2 rounded-lg border-grey-500 border-2 w-full"
+          type="email"
+          name="email"
+          placeholder="Your email"
+          autocomplete="username"
+          [(ngModel)]="form.email" />
+      </div>
+      <div class="form-control mb-2">
+        <input
+          class="p-2 rounded-lg border-grey-500 border-2 w-full"
+          type="password"
+          name="password"
+          placeholder="Your Password"
+          autocomplete="current-password"
+          [(ngModel)]="form.password" />
+      </div>
+      <button
+        type="submit"
+        class="bg-blue-700 text-white py-2 px-3 rounded-lg mr-1">
+        Login
+      </button>
+      <a routerLink="/register">Register</a>
+    </form>
+  </div>
+</div>
