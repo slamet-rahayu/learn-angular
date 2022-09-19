@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthModule } from './auth/auth.module';
+import { LandingModule } from './landing/landing.module';
 
 @NgModule({
   declarations: [AppComponent, SidebarComponent],
@@ -15,6 +16,7 @@ import { AuthModule } from './auth/auth.module';
     FontAwesomeModule,
     AuthModule,
     HttpClientModule,
+    LandingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

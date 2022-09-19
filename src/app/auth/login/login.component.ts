@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   constructor() {}
 
+  price: number = 1000;
+
   form: IForm = {
     email: '',
     password: '',

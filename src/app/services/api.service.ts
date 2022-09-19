@@ -1,3 +1,4 @@
+import qs from 'qs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -12,7 +13,21 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<TProducts> {
-    return this.http.get<TProducts>(`${this.apiUrl}/products`);
+  getProducts(page: number = 1): Observable<TProducts> {
+    const query = qs.stringify({
+      populate: {
+        image: {
+          fields: ['url'],
+        },
+        product_category: {
+          populate: '*',
+        },
+      },
+      pagination: {
+        limit: 10,
+        start: page > 1 ? (page - 1) * 5 : 0,
+      },
+    });
+    return this.http.get<TProducts>(`${this.apiUrl}/products?${query}`);
   }
 }

@@ -28,6 +28,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
     "prettier-eslint": "^15.0.1",
+    "qs": "^6.11.0",
     "rxjs": "~7.5.0",
     "save-dev": "0.0.1-security",
     "tslib": "^2.3.0",
